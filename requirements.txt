@@ -1,0 +1,9 @@
+flake8
+black
+mypy
+
+# dodatkowe opcje:
+# -r core.txt
+
+# uzycie:
+# pip install -r requirements.txt

@@ -1,32 +1,19 @@
 """
 Napisz funkcję encrypt, która zaszyfruje tekst zgodnie z szyfrem cesara.
 Oraz decrypt, która odkoduje ten tekst.
-
-    >>> encrypt("CEASER CIPHER DEMO", 4)
-    IEWIVrGMTLIVrHIQS
-    >>> decrypt("IEWIVrGMTLIVrHIQS", 4)
-    'CEASERzCIPHERzDEMO'
-
-Wersj trudniejsza
-
-    >>> decrypt("IEWIVrGMTLIVrHIQS", 4)
-    'CEASER CIPHER DEMO'
-
-
-przesuniecie 1
-"ABCD"
-"BCDA"
-
-
-przesuniecie 2
-"ABCD"
-"CDAB"
-
 """
 
 
 def encrypt(text: str, shift: int) -> str:
-    """Cipher text with ceasar cipher"""
+    """Cipher text with ceasar cipher
+    Example:
+
+    >>> encrypt("CEASER CIPHER DEMO", 4)
+    'GIEWIVrGMTLIVrHIQS'
+    >>> encrypt("A", 1)
+    'B'
+
+    """
     result = ""
     for char in text:
         if char.isupper():
@@ -37,7 +24,13 @@ def encrypt(text: str, shift: int) -> str:
 
 
 def decrypt(text: str, shift: int) -> str:
-    """Decipher text with ceasar cipher"""
+    """Decipher text with ceasar cipher
+
+    >>> decrypt("GIEWIVrGMTLIVrHIQS", 4)
+    'CEASER CIPHER DEMO'
+    >>> decrypt("B", 1)
+    'B'
+    """
     result = ""
     space = chr((ord(" ") + shift - 97) % 26 + 97)
     for char in text:
