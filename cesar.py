@@ -26,6 +26,7 @@ przesuniecie 2
 
 
 def encrypt(text: str, shift: int) -> str:
+    """Cipher text with ceasar cipher"""
     result = ""
     for char in text:
         if char.isupper():
@@ -36,6 +37,7 @@ def encrypt(text: str, shift: int) -> str:
 
 
 def decrypt(text: str, shift: int) -> str:
+    """Decipher text with ceasar cipher"""
     result = ""
     space = chr((ord(" ") + shift - 97) % 26 + 97)
     for char in text:
