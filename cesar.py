@@ -38,3 +38,5 @@ def encrypt(text: str, shift: int) -> str:
 if __name__ == "__main__":
     assert encrypt("CEASER CIPHER DEMO", 4) == "GIEWIVrGMTLIVrHIQS"
     assert encrypt("A", 1) == "B"
+    assert decrypt("GIEWIVrGMTLIVrHIQS", 4) == "CEASERzCIPHERzDEMO"
+    assert decrypt("B", 1) == "A"
