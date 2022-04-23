@@ -26,10 +26,15 @@ przesuniecie 2
 
 
 def encrypt(text: str, shift: int) -> str:
-    result = "IEWIVrGMTLIVrHIQS"
+    result = ""
+    for char in text:
+        if char.isupper():
+            result += chr((ord(char) + shift - 65) % 26 + 65)
+        else:
+            result += chr((ord(char) + shift - 97) % 26 + 97)
     return result
 
 
 if __name__ == "__main__":
-    assert encrypt("CEASER CIPHER DEMO", 4) == "IEWIVrGMTLIVrHIQS"
+    assert encrypt("CEASER CIPHER DEMO", 4) == "GIEWIVrGMTLIVrHIQS"
     assert encrypt("A", 1) == "B"
