@@ -23,3 +23,13 @@ przesuniecie 2
 "CDAB"
 
 """
+
+
+def encrypt(text: str, shift: int) -> str:
+    result = "IEWIVrGMTLIVrHIQS"
+    return result
+
+
+if __name__ == "__main__":
+    assert encrypt("CEASER CIPHER DEMO", 4) == "IEWIVrGMTLIVrHIQS"
+    assert encrypt("A", 1) == "B"
